@@ -8,6 +8,10 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/projectdiscovery/gologger v1.1.28
 	github.com/projectdiscovery/utils v0.2.14
+	github.com/robertkrimen/otto v0.4.0
+	github.com/spaolacci/murmur3 v1.1.0
+	golang.org/x/net v0.29.0
+	golang.org/x/text v0.18.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -51,10 +55,10 @@ require (
 	github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8 // indirect
 	golang.org/x/crypto v0.27.0 // indirect
 	golang.org/x/mod v0.17.0 // indirect
-	golang.org/x/net v0.29.0 // indirect
 	golang.org/x/sync v0.8.0 // indirect
 	golang.org/x/sys v0.25.0 // indirect
 	golang.org/x/tools v0.21.1-0.20240508182429-e35e4ccd0d2d // indirect
 	gopkg.in/djherbis/times.v1 v1.3.0 // indirect
+	gopkg.in/sourcemap.v1 v1.0.5 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )

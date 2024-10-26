@@ -21,22 +21,22 @@ type Rule struct {
 	Plugins  []*Plugin           `yaml:"plugins"`
 }
 
-// Group 根据协议分组
-type Group struct {
+// Finger 根据协议分组
+type Finger struct {
 	Rules map[string][]*Rule `yaml:"rules"`
 }
 
-func (g Group) AddRules(rules []*Rule) {
+func (f Finger) AddRules(rules []*Rule) {
 	for _, rule := range rules {
 		if rule.Service == "" {
 			rule.Service = "http"
 		}
-		g.Rules[rule.Service] = append(g.Rules[rule.Service], rule)
+		f.Rules[rule.Service] = append(f.Rules[rule.Service], rule)
 	}
 }
 
-func (g Group) Match(service string, banner *Banner) map[string]map[string]string {
-	rules, ok := g.Rules[service]
+func (f Finger) Match(service string, banner *Banner) map[string]map[string]string {
+	rules, ok := f.Rules[service]
 	if !ok {
 		gologger.Debug().Msgf("No rules found for %s", service)
 		return nil
@@ -58,8 +58,8 @@ func (g Group) Match(service string, banner *Banner) map[string]map[string]strin
 
 }
 
-func NewRuleGroup() *Group {
-	return &Group{Rules: make(map[string][]*Rule)}
+func NewFinger() *Finger {
+	return &Finger{Rules: make(map[string][]*Rule)}
 }
 
 func (r *Rule) Match(banner *Banner) (bool, map[string]string) {

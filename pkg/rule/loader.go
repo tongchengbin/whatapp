@@ -8,8 +8,8 @@ import (
 )
 import "github.com/projectdiscovery/gologger"
 
-func ScanRuleDirectory(directory string) (*Group, error) {
-	group := NewRuleGroup()
+func ScanRuleDirectory(directory string) (*Finger, error) {
+	group := NewFinger()
 	// 判断是文件名还是目录
 	file, err := os.Stat(directory)
 	if err != nil {
