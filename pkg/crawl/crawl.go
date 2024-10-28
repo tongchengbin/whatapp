@@ -37,7 +37,6 @@ func (c *Crawl) Match(uri string) (banner *rule.Banner, m map[string]map[string]
 	if c.options.Proxy != "" {
 		opts = append(opts, WithProxy(c.options.Proxy))
 	}
-	println(opts)
 	client, err := NewClient(opts...)
 	if err != nil {
 		return nil, m, err
